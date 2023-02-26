@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: #fff;
+    display: grid;
+    font-family: 'Lato', sans-serif;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    background-color: rgb(41, 218, 159);
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+menu {
+    display: grid;
+    align-items: center;
+    background-color: burlywood;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    display: grid;
+    align-items: center;
+    background-color: blueviolet;
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.main {
+    display: grid;
+    align-items: center;
+    background-color: cadetblue;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image {
+    display: grid;
+    align-items: center;
+    background-color: royalblue;
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra {
+    display: grid;
+    align-items: center;
+    background-color: salmon;
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+.banner {
+    display: grid;
+    align-items: center;
+    background-color: rgb(44, 176, 44);
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1.5fr;
+        grid-template-rows: 0.5fr 3fr 4fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu banner banner banner"
+        "menu extra extra image"          
+        ;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 2fr 3fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
